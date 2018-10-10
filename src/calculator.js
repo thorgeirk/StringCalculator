@@ -4,7 +4,18 @@ function add (numbers) {
   }
   if(numbers.includes(",") | ("\n") ) {
     var numbersArray = numbers.split(/[\n,]+/);
-    return sum(numbersArray);
+    negNumber = 0;
+    for(var i = 0; i < numbersArray.length; i++) {
+      if(numbersArray[i] < 0) {
+        negNumber = numbersArray[i];
+      }
+    }
+    if(negNumber < 0) {
+      return(negNumber);
+    }
+    else {
+      return sum(numbersArray);
+    }
   }
   else {
     return parseInt(numbers);

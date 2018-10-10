@@ -19,3 +19,7 @@ it("should sumerize multiple numbers", () => {
 it("should handle new lines and commas between numbers", () => {
   expect(add("1\n2,3")).toBe(6);
 });
+
+it("should return a negative number if one exists in the set", () => {
+  expect(add("1\n2,3,-2")).toBe("-2");
+});
