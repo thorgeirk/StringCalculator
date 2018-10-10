@@ -1,13 +1,13 @@
-function add (number) {
-  if(number == "") {
+function add (numbers) {
+  if(numbers == "") {
     return 0;
   }
-  if(number.includes(",")) {
-    var numberArray = number.split(",");
-    return parseInt(numberArray[0]) + parseInt(numberArray[1]);
+  if(numbers.includes(",")) {
+    var numbersArray = numbers.split(",");
+    return parseInt(numbersArray[0]) + parseInt(numbersArray[1]);
   }
   else {
-    return parseInt(number);
+    return parseInt(numbers);
   }
 }
 
