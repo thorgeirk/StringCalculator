@@ -15,3 +15,7 @@ it("should return sum of two given numbers", () => {
 it("should sumerize multiple numbers", () => {
   expect(add("1,2,3")).toBe(6);
 });
+
+it("should handle new lines and commas between numbers", () => {
+  expect(add("1\n2,3")).toBe(6);
+});
