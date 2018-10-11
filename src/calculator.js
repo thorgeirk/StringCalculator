@@ -13,14 +13,7 @@ function add (numbers) {
       }
     }
     if(index > 0) {
-      var errorMessage = "Negatives not allowed: ";
-      for(var i = 0; i < negativeArray.length; i++) {
-        errorMessage += negativeArray[i];
-        if(i != (negativeArray.length - 1)) {
-          errorMessage += ",";
-        }
-      }
-      throw errorMessage;
+      displayErrMessage(negativeArray);
     }
     else {
       return sum(numbersArray);
@@ -37,6 +30,16 @@ function add (numbers) {
       total += parseInt(numbersArray[i]);
     }
     return total;
+  }
+  function displayErrMessage(negativeArray) {
+    var errorMessage = "Negatives not allowed: ";
+    for(var i = 0; i < negativeArray.length; i++) {
+      errorMessage += negativeArray[i];
+      if(i != (negativeArray.length - 1)) {
+        errorMessage += ",";
+      }
+    }
+    throw errorMessage;
   }
 }
 
