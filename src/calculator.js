@@ -4,14 +4,23 @@ function add (numbers) {
   }
   if(numbers.includes(",") | ("\n") ) {
     var numbersArray = numbers.split(/[\n,]+/);
-    negNumber = 0;
+    var negativeArray = [];
+    var index = 0;
     for(var i = 0; i < numbersArray.length; i++) {
       if(numbersArray[i] < 0) {
-        negNumber = numbersArray[i];
+        negativeArray[index] = numbersArray[i];
+        index++;
       }
     }
-    if(negNumber < 0) {
-      throw ("Negative numbers not allowed: " + negNumber);
+    if(index > 0) {
+      var errorMessage = "Negatives not allowed: ";
+      for(var i = 0; i < negativeArray.length; i++) {
+        errorMessage += negativeArray[i];
+        if(i != (negativeArray.length - 1)) {
+          errorMessage += ",";
+        }
+      }
+      throw errorMessage;
     }
     else {
       return sum(numbersArray);
