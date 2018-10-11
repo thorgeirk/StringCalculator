@@ -20,6 +20,9 @@ it("should handle new lines and commas between numbers", () => {
   expect(add("1\n2,3")).toBe(6);
 });
 
-it("should return a negative number if one exists in the set", () => {
-  expect(add("1\n2,3,-2")).toBe("Negative numbers not allowed: -2");
+test("should throw an error message along with the negative number in the set", () => {
+  function CheckForNeg() {
+    add("1\n2,3,-2");
+  }
+  expect(CheckForNeg).toThrowError("Negative numbers not allowed: -2");
 });

@@ -11,7 +11,7 @@ function add (numbers) {
       }
     }
     if(negNumber < 0) {
-      return ("Negative numbers not allowed: " + negNumber);
+      throw ("Negative numbers not allowed: " + negNumber);
     }
     else {
       return sum(numbersArray);
