@@ -26,3 +26,7 @@ test("should throw an error message along with all negative numbers in the set",
   }
   expect(CheckForNeg).toThrowError("Negatives not allowed: -2,-3");
 });
+
+it("should ignore numbers bigger than 1000", () => {
+  expect(add("1001,2")).toBe(2);
+});
