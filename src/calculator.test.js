@@ -30,3 +30,7 @@ test("should throw an error message along with all negative numbers in the set",
 it("should ignore numbers bigger than 1000", () => {
   expect(add("1001,2")).toBe(2);
 });
+
+it("should display a delimiter", () => {
+  expect(add("//;\n1;2")).toBe(";");
+});
